@@ -9,7 +9,8 @@ INC	=	inc/
 
 DIR	=	src/
 
-SRC	=	strlen.asm
+SRC	=	strlen.asm\
+		strchr.asm
 
 SRCS	=	$(addprefix $(DIR), $(SRC))
 
@@ -20,12 +21,6 @@ LINK	=	ld
 CFLAGS	=	-shared -fPIC
 
 ASMFLAGS	=	-f elf64
-
-TEST	=	test
-
-NAME	=	libasm.so
-
-TESTSRC	=	tester.c
 
 TESTOBJ	=	$(TESTSRC:.c=.o)
 
@@ -39,17 +34,11 @@ $(NAME):	$(OBJ)
 %.o: %.asm
 	$(CC) $(ASMFLAGS) $< -o $@
 
-test:	$(TEST)
-
-$(TEST):	$(TESTOBJ)
-		gcc -o $(TEST) $(TESTOBJ)
-
 clean:
-		rm -rf $(OBJ) $(TESTOBJ)
+		rm -rf $(OBJ)
 
 fclean:	clean
 		rm -rf $(NAME)
-		rm -rf $(TEST)
 
 re: fclean all
 

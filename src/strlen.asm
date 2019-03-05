@@ -1,20 +1,21 @@
 BITS 64
 
+GLOBAL strlen:
 SECTION .text
 
 strlen:
-        PUSH    RBP
-        MOV     RBP, RSP
-        XOR     RCX, RCX
+        push    rbp
+        mov     rbp, rsp
+        xor     rcx, rcx
 
 loop:
-        CMP     BYTE [RDI + RCX], 0
-        JZ      end
-        INC     RCX
-        JMP     loop
+        cmp     BYTE [rdi + rcx], 0
+        jz      exit
+        inc     rcx
+        jmp     loop
 
-end:
-        MOV     RAX, RCX
-        MOV     RSP, RBP
-        POP     RBP
-        RET
+exit:
+        mov     rax, rcx
+        mov     rsp, rbp
+        pop     rbp
+        ret
