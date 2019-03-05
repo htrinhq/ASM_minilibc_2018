@@ -1,0 +1,4 @@
+*.o
+libasm.so
+tester.c
+test
