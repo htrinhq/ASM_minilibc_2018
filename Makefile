@@ -10,13 +10,16 @@ INC	=	inc/
 DIR	=	src/
 
 SRC	=	strlen.asm\
-		strchr.asm
+		strchr.asm\
+		memset.asm
 
 SRCS	=	$(addprefix $(DIR), $(SRC))
 
 CC	=	nasm
 
 LINK	=	ld
+
+NAME	=	libasm.so
 
 CFLAGS	=	-shared -fPIC
 

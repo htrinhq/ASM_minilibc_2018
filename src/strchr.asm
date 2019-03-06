@@ -1,12 +1,11 @@
 BITS 64
 
-GLOBAL strchr:
-SECTION .text
+global strchr:
+section .text
 
 strchr:
     push    rbp
     mov     rbp, rsp
-    push    rdi
 
 loop:
     cmp BYTE [rdi], sil
@@ -24,7 +23,6 @@ no_char:
     mov rax, 0
 
 end:
-    pop rdi
     mov rsp, rbp
     pop rbp
     ret
