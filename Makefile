@@ -11,7 +11,8 @@ DIR	=	src/
 
 SRC	=	strlen.asm\
 		strchr.asm\
-		memset.asm
+		memset.asm\
+		memcpy.asm
 
 SRCS	=	$(addprefix $(DIR), $(SRC))
 

@@ -1,9 +1,9 @@
 BITS 64
 
-global memset.asm:
+global memcpy:
 section .text
 
-memset:
+memcpy:
     push    rbp
     push    rcx
     mov     rbp, rsp
@@ -12,7 +12,8 @@ memset:
 loop:
     cmp     rcx, rdx
     je      end
-    mov     [rdi + rcx], sil
+    mov     r8b, [rsi + rcx]
+    mov     [rdi + rcx], r8b
     inc     rcx
     jmp     loop
 
@@ -21,3 +22,4 @@ end:
     mov     rsp, rbp
     pop     rcx
     pop     rbp
+    ret
