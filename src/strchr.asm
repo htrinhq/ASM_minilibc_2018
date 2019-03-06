@@ -9,9 +9,9 @@ strchr:
 
 loop:
     cmp BYTE [rdi], sil
-    jz  get_char
+    je  get_char
     cmp BYTE [rdi], 0
-    jz  no_char
+    je  no_char
     inc rdi
     jmp loop
 
