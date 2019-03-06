@@ -1,6 +1,6 @@
 BITS 64
 
-global memset.asm:
+global memset:
 section .text
 
 memset:
