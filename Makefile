@@ -10,8 +10,8 @@ INC	=	inc/
 DIR	=	src/
 
 SRC	=	strlen.asm\
-		strchr.asm\
 		memset.asm\
+		strchr.asm\
 		memcpy.asm\
 		strcmp.asm
 

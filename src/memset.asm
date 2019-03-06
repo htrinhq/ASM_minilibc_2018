@@ -12,7 +12,7 @@ memset:
 loop:
     cmp     rcx, rdx
     je      end
-    mov     [rdi + rcx], sil
+    mov     BYTE [rdi + rcx], sil
     inc     rcx
     jmp     loop
 
@@ -21,3 +21,4 @@ end:
     mov     rsp, rbp
     pop     rcx
     pop     rbp
+    ret

@@ -1,7 +1,7 @@
 BITS 64
 
-section .text
 global strlen:
+section .text
 
 strlen:
         push    rbp
