@@ -2,3 +2,5 @@
 libasm.so
 tester
 tests/
+test.c
+rindex

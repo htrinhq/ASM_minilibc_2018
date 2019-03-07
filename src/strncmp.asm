@@ -9,6 +9,7 @@ strncmp:
     push    r8
     push    r9
     mov     rbp, rsp
+    dec     rdx
     xor     rcx, rcx
 
 loop:
