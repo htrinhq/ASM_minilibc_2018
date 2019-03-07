@@ -20,7 +20,7 @@ strstr:
     xor     rcx, rcx
 
 check_rsi:
-    cmp     rsi, 0
+    cmp     BYTE [rsi], 0
     je      return_rdi
 
 loop:
