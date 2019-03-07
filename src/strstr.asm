@@ -50,6 +50,9 @@ return_rdi:
 
 return_pointer:
     add     rdi, rcx
+    call    strlen wrt ..plt
+    cmp     rax, rcx
+    jl      return_null
     mov     rax, rdi
     jmp     end
 
