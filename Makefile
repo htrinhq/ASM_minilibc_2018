@@ -17,7 +17,8 @@ SRC	=	strlen.asm\
 		strcasecmp.asm\
 		strncmp.asm\
 		rindex.asm\
-		strstr.asm
+		strstr.asm\
+		strcspn.asm
 
 SRCS	=	$(addprefix $(DIR), $(SRC))
 
