@@ -27,7 +27,16 @@ loop:
     cmp     BYTE [rdi + rcx], 0
     je      return_null
     mov     r8, rdi
-    movzx   rdi, BYTE [rdi + rcx]
+    xor     r9, r9
+
+inc_rdi:
+    cmp     r9, rcx
+    je      compare
+    inc     rdi
+    inc     r9
+    jmp     inc_rdi
+
+compare:
     call    strncmp wrt ..plt
     mov     rdi, r8
     cmp     rax, 0
@@ -40,8 +49,8 @@ return_rdi:
     jmp     end
 
 return_pointer:
-    movzx   r8, BYTE [rdi + rcx]
-    mov     rax, r8
+    add rdi, rcx
+    mov   rax, rdi
     jmp     end
 
 return_null:
