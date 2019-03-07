@@ -11,11 +11,13 @@ strcspn:
     push    r8
     mov     rbp, rsp
     xor     rcx, rcx
+    cmp     BYTE [rsi], 0
+    je      return_strlen
 
 loop:
     xor     rdx, rdx
     cmp     BYTE [rdi + rcx], 0
-    je      return_null
+    je      return_strlen
 
 compare_with_rsi:
     cmp     BYTE [rsi + rdx], 0
@@ -34,7 +36,7 @@ return_index:
     mov     rax, rcx
     jmp     end
 
-return_null:
+return_strlen:
     call    strlen wrt ..plt
 
 end:
