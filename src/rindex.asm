@@ -10,7 +10,6 @@ rindex:
     mov     rbp, rsp
     call    strlen wrt ..plt
     mov     rcx, rax
-    dec     rcx
 
 loop:
     cmp     BYTE [rdi + rcx], sil
