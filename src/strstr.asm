@@ -49,8 +49,8 @@ return_rdi:
     jmp     end
 
 return_pointer:
-    add rdi, rcx
-    mov   rax, rdi
+    add     rdi, rcx
+    mov     rax, rdi
     jmp     end
 
 return_null:
