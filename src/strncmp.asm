@@ -3,7 +3,7 @@ BITS 64
 global strncmp:
 section .text
 
-strcmp:
+strncmp:
     push    rbp
     push    rcx
     push    r8
