@@ -25,7 +25,7 @@ get_char:
     jmp     end
 
 no_char:
-    mov     rax, 0
+    xor     rax, rax
 
 end:
     mov     rsp, rbp

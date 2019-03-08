@@ -37,7 +37,7 @@ return_index:
     jmp     end
 
 return_null:
-    mov     rax, 0
+    xor     rax, rax
 
 end:
     mov     rsp, rbp
