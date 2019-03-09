@@ -8,9 +8,7 @@ memmove:
     push    rcx
     push    r8
     mov     rbp, rsp
-    mov     r8, rdi
-    sub     r8, rsi
-    cmp     r8, 0
+    cmp     rdi, rsi
     jge     from_right
     xor     rcx, rcx
 
