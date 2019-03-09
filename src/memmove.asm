@@ -10,7 +10,7 @@ memmove:
     push    r8
     mov     rbp, rsp
     cmp     rdi, rsi
-    jge     from_right
+    jl      loop_left
 
 from_right:
     dec     rdx
